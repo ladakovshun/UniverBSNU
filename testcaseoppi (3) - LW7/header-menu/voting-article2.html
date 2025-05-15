@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вибори голови профспілки</title>
+    <link rel="stylesheet" href="../css/voting2.css">
+    <script defer src="../js/voting-union.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h2>Вибори голови профспілки</h2>
+    </header>
+
+    <main>
+        <section id="info">
+            <h1>Обери свого кандидата!</h1>
+            <p>Голосувати можуть тільки авторизовані студенти.</p>
+        </section>
+
+        <div class="candidates">
+            <div class="candidate">
+                <img src="../img/serhii_bohdantsev.jpg" alt="Богданцев Сергій">
+                <h3>Богданцев Сергій</h3>
+                <p>Сергій прагне забезпечити соціальний захист студентів та покращити умови навчання.</p>
+                <button class="vote-btn" data-candidate="bohdantsev">Голосувати</button>
+            </div>
+
+            <div class="candidate">
+                <img src="../img/kateryna_kutuzaki.jpg" alt="Катерина Кутузакі">
+                <h3>Катерина Кутузакі</h3>
+                <p>Катерина пропонує нові соціальні програми та підтримку студентських ініціатив.</p>
+                <button class="vote-btn" data-candidate="kutuzaki">Голосувати</button>
+            </div>
+
+            <div class="candidate">
+                <img src="../img/anna_sadova.jpg" alt="Садова Анна">
+                <h3>Садова Анна</h3>
+                <p>Анна хоче створити більше можливостей для самореалізації студентів.</p>
+                <button class="vote-btn" data-candidate="sadova">Голосувати</button>
+            </div>
+        </div>
+
+        <div id="results">
+            <h2>Результати голосування</h2>
+            <canvas id="voteChart"></canvas>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Студентська профспілка ЧНУ ім. Петра Могили</p>
+    </footer>
+</body>
+</html>

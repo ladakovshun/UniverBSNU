@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обрання кінофільму</title>
+    <link rel="stylesheet" href="../css/voting4.css">
+    <script defer src="../js/voting-movie.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h2>Обрання кінофільму на показ</h2>
+    </header>
+
+    <main>
+        <section id="info">
+            <h1>Обери фільм для показу!</h1>
+            <p>Голосувати можуть тільки авторизовані студенти.</p>
+        </section>
+
+        <div class="candidates">
+            <div class="candidate">
+                <img src="../img/interstellar.jpg" alt="Інтерстеллар">
+                <h3>Інтерстеллар</h3>
+                <p>Науково-фантастичний фільм про дослідження космосу та подорожі у часі.</p>
+                <button class="vote-btn" data-movie="interstellar">Голосувати</button>
+            </div>
+
+            <div class="candidate">
+                <img src="../img/green_book.jpg" alt="Зелена книга">
+                <h3>Зелена книга</h3>
+                <p>Зворушлива історія про дружбу між музикантом та його водієм під час подорожі Америкою.</p>
+                <button class="vote-btn" data-movie="green_book">Голосувати</button>
+            </div>
+
+            <div class="candidate">
+                <img src="../img/joker.jpg" alt="Джокер">
+                <h3>Джокер</h3>
+                <p>Психологічний трилер про життя Артура Флека та його шлях до перетворення в Джокера.</p>
+                <button class="vote-btn" data-movie="joker">Голосувати</button>
+            </div>
+        </div>
+
+        <div id="results">
+            <h2>Результати голосування</h2>
+            <canvas id="voteChart"></canvas>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Кіноклуб ЧНУ ім. Петра Могили</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вибори студентського декана</title>
+    <link rel="stylesheet" href="../css/voting1.css">
+    <script defer src="../js/voting.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h2>Вибори студентського декана</h2>
+    </header>
+
+    <main>
+        <section id="info">
+            <h1>Обери свого кандидата!</h1>
+            <p>Голосувати можуть тільки авторизовані студенти.</p>
+        </section>
+
+        <div class="candidates">
+            <div class="candidate">
+                <img src="../img/anna_sadova.jpg" alt="Анна Садова">
+                <h3>Анна Садова</h3>
+                <p>Хочу вдосконалити роботу самоврядування, популяризувати Факультет комп'ютерних наук.</p>
+                <button class="vote-btn" data-candidate="sadova">Голосувати</button>
+            </div>
+
+            <div class="candidate">
+                <img src="../img/vlad_holovatenko.jpg" alt="Головатенко Владислав">
+                <h3>Головатенко Владислав</h3>
+                <p>Я зроблю все можливе і не можливе. Вирішу питання з не працюючим терміналом в столовці Могилянки.</p>
+                <button class="vote-btn" data-candidate="holovatenko">Голосувати</button>
+            </div>
+        </div>
+
+        <div id="results">
+            <h2>Результати голосування</h2>
+            <canvas id="voteChart"></canvas>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Студентська рада ЧНУ ім. Петра Могили</p>
+    </footer>
+</body>
+</html>

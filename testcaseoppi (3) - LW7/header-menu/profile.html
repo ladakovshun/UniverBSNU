@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профіль користувача</title>
+    <link rel="stylesheet" href="../css/profile.css">
+</head>
+<body>
+    <div class="profile-container">
+        <!-- Контент редагування профілю -->
+        <section class="profile-edit-section">
+            <!-- Фото профілю та форма редагування -->
+            <div class="profile-header" style="line-height: 1.25;">
+                <div class="profile-photo">
+                    <h2 id="userName" style="text-align: center;"></h2>
+                    <img id="profile-image" src="../img/default-avatar.png" alt="User Profile" class="profile-image">
+                    <input type="file" id="profileImageInput" class="change-photo-btn" />
+                    <label for="profileImageInput" class="upload-photo-label" style="width: 80%;">Змінити фото</label>
+                </div>
+                <div class="profile-info" style="font-size: 16px;">
+                    <p class="user-role">Роль: <span>Адміністратор</span></p>
+                    <p class="user-status">Статус: <span class="premium-status">Преміум</span></p>
+                    <form id="profileForm">
+                        <div class="form-field">
+                            <label for="firstName">Логін</label>
+                            <input type="text" id="firstName" placeholder="Логін" value="">
+                        </div>
+                        <button type="submit" class="save-btn">Зберегти зміни</button>
+                    </form>
+                </div>                
+                <div class="profile-actions">
+                    <a href="../header-menu/subscriptions.html">
+                      <button class="sub-btn">Підписки</button>
+                      <button id="logout-btn" class="logout-btn">Вийти</button>
+                    </a>
+                  </div>                  
+            </div>
+
+            <!-- Блок новин -->
+            <section class="news-section">
+                <h2>Мої новини</h2>
+                <div class="news-list">
+                    <div class="news-item">
+                       <a href="#"> <p><strong>Новина 1:</strong> Оновлення профілю доступне для всіх користувачів!</p></a>
+                    </div>
+                    <div class="news-item">
+                       <a href="#"> <p><strong>Новина 2:</strong> Стартує новий курс для студентів.</p></a>
+                    </div>
+                    <!-- Добавьте сюда больше новостей, если нужно -->
+                </div>
+                <button class="add-news-btn">Додати новину</button>
+            </section>
+        </section>
+    </div>
+
+    <!-- Модальне вікно для додавання новини -->
+    <div id="newsModal" class="modal-window">
+        <form class="modal-content" id="newsForm">
+            <span class="close">&times;</span>
+            <h2>Додати новину</h2>
+            <div class="form-align">
+                <label for="newsTitle">Заголовок новини</label>
+                <input type="text" id="newsTitle" placeholder="Введіть заголовок новини">
+            </div>
+
+            <div class="form-align">
+                <label for="newsContent">Текст новини</label>
+                <textarea id="newsContent" placeholder="Введіть текст новини"></textarea>
+            </div>
+
+            <button type="submit" id="submitNews">Додати новину</button>
+        </form>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    
+            if (currentUser && currentUser.name) {
+                // Встановлюємо ім'я користувача у елемент <h2>
+                const userNameElement = document.getElementById("userName");
+                userNameElement.textContent = currentUser.name;
+    
+                // Встановлюємо логін користувача у поле форми
+                const firstNameField = document.getElementById("firstName");
+                firstNameField.value = currentUser.name; // Використовуємо value для полів вводу
+            }
+    
+            const logoutBtn = document.getElementById("logout-btn");
+    
+            logoutBtn.addEventListener("click", function () {
+                // Видаляємо дані про авторизацію з localStorage
+                localStorage.removeItem("currentUser");
+    
+                // Переходимо на головну сторінку
+                window.location.href = "../index.html";
+            });
+        });
+    </script>    
+</body>
+</html>

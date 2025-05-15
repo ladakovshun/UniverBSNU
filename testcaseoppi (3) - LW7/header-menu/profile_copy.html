@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профіль користувача</title>
+    <link rel="stylesheet" href="user-profile.css">
+</head>
+<style>
+/* Основні стилі */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+/* Контейнер редагування профілю */
+.profile-container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Редагування профілю */
+.profile-edit-section {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Фото профілю */
+.profile-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.profile-photo {
+    position: relative;
+    margin-right: 20px;
+}
+
+.profile-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+.upload-photo-label {
+    display: block;
+    margin-top: 10px;
+    background-color: #3b5998;
+    color: white;
+    text-align: center;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Інформація про профіль */
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.profile-info h1 {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.user-role, .user-status {
+    font-size: 14px;
+    color: #606770;
+}
+
+.premium-status {
+    color: #ff9f00;
+    font-weight: bold;
+}
+
+/* Форми для редагування */
+.form-field {
+    margin-bottom: 15px;
+}
+
+.form-field label {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-field input, .form-field textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.save-btn {
+    padding: 10px 20px;
+    background-color: #3b5998;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.save-btn:hover {
+    background-color: #2d4373;
+}
+
+/* Блок новин */
+.news-section {
+    margin-top: 30px;
+}
+
+.news-section h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.news-list {
+    margin-bottom: 20px;
+}
+
+.news-item {
+    background-color: #f7f7f7;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+}
+
+.add-news-btn {
+    padding: 10px 20px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-news-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Модальне вікно для новини */
+.modal-window {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    position: relative;
+}
+
+.modal-content textarea {
+    height: 150px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.news-item a{
+    text-decoration: none;
+    color: black;
+    
+}
+.news-item a:hover{
+    text-decoration: underline;
+    
+}
+</style>
+<body>
+    <div class="profile-container">
+        <!-- Контент редагування профілю -->
+        <section class="profile-edit-section">
+            <!-- Фото профілю та форма редагування -->
+            <div class="profile-header">
+                <div class="profile-photo">
+                    <img src="profile.jpg" alt="User Profile" class="profile-image">
+                    <input type="file" id="profileImageInput" class="change-photo-btn" />
+                    <label for="profileImageInput" class="upload-photo-label">Змінити фото</label>
+                </div>
+                <div class="profile-info">
+                    <h1>Іван Іванов</h1>
+                    <p class="user-role">Роль: <span>Студент</span></p>
+                    <p class="user-status">Статус: <span class="premium-status">Преміум</span></p>
+
+                    <form id="profileForm">
+                        <div class="form-field">
+                            <label for="firstName">Ім'я</label>
+                            <input type="text" id="firstName" placeholder="Ім'я" value="Іван">
+                        </div>
+                        <div class="form-field">
+                            <label for="lastName">Фамілія</label>
+                            <input type="text" id="lastName" placeholder="Фамілія" value="Іванов">
+                        </div>
+                        <button type="submit" class="save-btn">Зберегти зміни</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Блок новин -->
+            <section class="news-section">
+                <h2>Мої новини</h2>
+                <div class="news-list">
+                    <div class="news-item">
+                       <a href="#"> <p><strong>Новина 1:</strong> Оновлення профілю доступне для всіх користувачів!</p></a>
+                    </div>
+                    <div class="news-item">
+                       <a href="#"> <p><strong>Новина 2:</strong> Стартує новий курс для студентів.</p></a>
+                    </div>
+                    <!-- Добавьте сюда больше новостей, если нужно -->
+                </div>
+                <button class="add-news-btn">Додати новину</button>
+            </section>
+        </section>
+    </div>
+
+    <!-- Модальне вікно для додавання новини -->
+    <div id="newsModal" class="modal-window">
+        <form class="modal-content" id="newsForm">
+            <span class="close">&times;</span>
+            <h2>Додати новину</h2>
+            <div class="form-align">
+                <label for="newsTitle">Заголовок новини</label>
+                <input type="text" id="newsTitle" placeholder="Введіть заголовок новини">
+            </div>
+
+            <div class="form-align">
+                <label for="newsContent">Текст новини</label>
+                <textarea id="newsContent" placeholder="Введіть текст новини"></textarea>
+            </div>
+
+            <button type="submit" id="submitNews">Додати новину</button>
+        </form>
+    </div>
+</body>
+</html>
