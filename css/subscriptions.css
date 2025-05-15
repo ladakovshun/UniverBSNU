@@ -1,0 +1,255 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgba(0, 0, 0, 0.05);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #90D7FF;
+    text-align: center;
+    padding: 20px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+main {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.subscriptions {
+    text-align: center;
+    width: 700px;
+    background-color: #fff;
+    padding: 15px 0px 15px 15px;
+    background: none;
+}
+
+.sub-part {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    background: none;
+    flex-wrap: wrap;
+}
+
+.blog-card {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    width: 200px;
+    position: relative;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.blog-card h2 {
+    margin-bottom: 0px;
+}
+
+.blog-image {
+    background-color: rgb(200, 200, 200);
+    width: 100%;
+    height: 150px;
+    border-radius: 5px;
+}
+
+.blog-category {
+    color: gray;
+    font-size: 12px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    margin-top: 15px;
+    padding: 0px 10px;
+    font-weight: bold;
+}
+
+.blog-title {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding: 0px 10px;
+}
+
+.blog-meta {
+    display: flex;
+    align-items: center;
+    padding: 8px 8px 5px 8px;
+    align-items: center;
+    background: none;
+}
+
+.blog-meta a {
+    margin: 0;
+    padding: 0;
+}
+
+.blog-meta a img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.blogcss {
+    display: flex;
+}
+
+.subscriptions-line {
+    border: none;
+    height: 2px;
+    background-color: gray;
+    margin: 20px 0;
+}
+
+.vertical-line {
+    width: 1px;
+    border: none;
+    background-color: gray;
+    height: auto;
+    transform: translateX(-50%);
+    align-self: stretch;
+}
+
+.register-container {
+    text-align: center;
+    /*margin: 0px 20px;*/
+    width: 450px;
+    padding: 15px 15px 15px 0px;
+    margin-left: 40px;
+}
+
+.register-container h2 {
+    margin-left: 20px;
+}
+
+.form-align {
+    text-align: left;
+}
+
+.register-container label {
+    display: block;
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.register-container input#name, .register-container input#login, .register-container input[type="email"], .register-container input[type="file"] {
+    width: 60%;
+}
+
+.register-container input[type="file"] {
+    background-color: transparent;
+}
+
+.register-container select {
+    width: 65%;
+}
+
+.register-container input, select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 15px;
+    margin-bottom: 15px;
+    outline: none;
+    background-color: #FFFFFF; /**/
+}
+
+.register-container input#name {
+    border: 2px solid #000000;
+}
+
+.register-container input#login {
+    border: 2px solid #000000;
+}
+
+.register-container input:focus, select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.register-container input[type="email"].invalid {
+    border: 2px solid #dc3545;
+    background-color: rgba(220, 53, 69, 0.1);
+}
+
+.register-container select {
+    cursor: pointer;
+    border: 2px solid #0056b3;
+    /*background-color: rgba(0, 86, 179, 0.1);*/
+}
+
+.register-container p {
+    font-size: 15px;
+    /*color: #555;*/
+    color: #666;
+    margin: 10px 0;
+}
+
+.register-container p a {
+    /*color: #0056b3;*/
+    color: #666;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-container p a:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    display: none;
+    margin-top: -5px;
+    margin-bottom: 10px;
+}
+
+#profilePreview {
+    display: none;
+    width: 150px;
+    height: 150px;
+    margin-top: 10px;
+    border-radius: 50%;
+}
+
+.register-container button {
+    width: 220px;
+    padding: 12px 10px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.register-container button:hover {
+    background-color: #333;
+}
+
+footer {
+    background: #90D7FF;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    margin-top: 20px;
+}

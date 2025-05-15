@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Підписки</title>
+    <link rel="stylesheet" href="../css/subscriptions.css">
+</head>
+
+<body>
+    <header>
+        <h2>Підписки</h2>
+    </header>
+    <main>
+        <div class="subscriptions">
+                <h2>Ваші підписки</h2>
+                <div class="sub-part">
+                    <div class="blog-card">
+                        <div class="blogcss">
+                            <!-- img --><div class="blog-image"></div>
+                        </div>
+                        <p class="blog-category">ФКН</p>
+                        <h2 class="blog-title">Усе про патерни проєктування</h2>
+                        <div class="blog-meta">
+                            <a href="#"><img src="../img/go-to.png" alt="Go to"></a>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blogcss">
+                            <!-- img --><div class="blog-image"></div>
+                        </div>
+                        <p class="blog-category">ФКН</p>
+                        <h2 class="blog-title">Написання дипломної роботи</h2>
+                        <div class="blog-meta">
+                            <a href="#"><img src="../img/go-to.png" alt="Go to"></a>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blogcss">
+                            <!-- img --><div class="blog-image"></div>
+                        </div>
+                        <p class="blog-category">ФКН</p>
+                        <h2 class="blog-title">Олімпіадне програмування</h2>
+                        <div class="blog-meta">
+                            <a href="#"><img src="../img/go-to.png" alt="Go to"></a>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blogcss">
+                            <!-- img --><div class="blog-image"></div>
+                        </div>
+                        <p class="blog-category">ФКН</p>
+                        <h2 class="blog-title">Стартап: як почати власний проєкт</h2>
+                        <div class="blog-meta">
+                            <a href="#"><img src="../img/go-to.png" alt="Go to"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="vertical-line"></div>
+
+        <form class="register-container" id="registerForm">
+            <h2>Оформити підписку</h2>
+            <div class="form-align">
+                <label for="faculty">Факультет</label>
+                <select id="faculty">
+                    <option value="">Оберіть факультет</option>
+                    <option>ННІ публічного управління та адміністрування</option>
+                    <option>Навчально-науковий медичний інститут</option>
+                    <option>ННІ післядипломної освіти</option>
+                    <option>Факультет економічних наук</option>
+                    <option>Факультет комп’ютерних наук</option>
+                    <option>Факультет політичних наук</option>
+                    <option>Факультет фізичного виховання та спорту</option>
+                    <option>Факультет філології</option>
+                    <option>Юридичний факультет</option>
+                </select>
+                <small class="error-message" id="facultyError"></small>
+            </div>
+
+            <div class="form-align">
+                <label for="category">Категорія</label>
+                <select id="category">
+                    <option value="">Оберіть категорію</option>
+                    <option>Працевлаштування</option>
+                    <option>Культурні заходи</option>
+                    <option>Спортивні заходи</option>
+                    <option>Клуби за інтересами</option>
+                    <option>Студенти жартують</option>
+                </select>
+                <small class="error-message" id="categoryError"></small>
+            </div>
+
+            <button type="submit" id="submitSubscription">Підтвердити</button>
+        </form>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Сайт новин ЧНУ імені Петра Могили</p>
+    </footer>
+
+    <script>
+        document.getElementById("registerForm").addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            let category = document.getElementById("category");
+            let faculty = document.getElementById("faculty");
+
+            let categoryError = document.getElementById("categoryError");
+            let facultyError = document.getElementById("facultyError");
+            
+            if (!categoryError) {
+                categoryError = document.createElement("p");
+                categoryError.id = "categoryError";
+                categoryError.style.color = "red";
+                category.parentNode.appendChild(categoryError);
+            }
+            
+            if (!facultyError) {
+                facultyError = document.createElement("p");
+                facultyError.id = "facultyError";
+                facultyError.style.color = "red";
+                faculty.parentNode.appendChild(facultyError);
+            }
+
+            let isValid = true;
+            // Перевірка категорії
+            if (category.value === "") {
+                categoryError.textContent = "Оберіть категорію.";
+                categoryError.style.display = "block";
+                isValid = false;
+            } else {
+                categoryError.style.display = "none";
+            }
+
+            // Перевірка факультету
+            if (faculty.value === "") {
+                facultyError.textContent = "Оберіть факультет.";
+                facultyError.style.display = "block";
+                isValid = false;
+            } else {
+                facultyError.style.display = "none";
+            }
+
+            // Якщо всі перевірки пройдені
+            if (isValid) {
+                alert("Підписку оформлено!");
+                
+                // Очищення форми
+                category.selectedIndex = 0;
+                faculty.selectedIndex = 0;
+                
+                // Перехід на головну сторінку
+                window.location.href = "./subscriptions.html";
+            }
+        });
+
+        document.getElementById("profileImage").addEventListener("change", function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const preview = document.getElementById("profilePreview");
+                    preview.src = e.target.result;
+                    preview.style.display = "block";
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>

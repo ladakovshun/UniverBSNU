@@ -1,0 +1,149 @@
+body {
+    background-color: rgba(0, 0, 0, 0.05);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #90D7FF;
+    text-align: center;
+    padding: 20px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+hr {
+    margin-bottom: 20px;
+}
+
+.register-container {
+    text-align: center;
+    margin: 0px 20px;
+}
+
+h2 {
+    margin-left: 20px;
+}
+
+.form-align {
+    text-align: left;
+}
+
+.register-container label {
+    display: block;
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.register-container input#name,.register-container input#password,.register-container input#confirmPassword, .register-container input#login, .register-container input[type="email"], .register-container input[type="file"] {
+    width: 20%;
+}
+
+.register-container input[type="file"] {
+    background-color: transparent;
+}
+
+.register-container select {
+    width: 21.5%;
+}
+
+.register-container input, select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 15px;
+    margin-bottom: 15px;
+    outline: none;
+    background-color: #FFFFFF; /**/
+}
+
+.register-container input#name {
+    border: 2px solid #000000;
+}
+
+.register-container input#login {
+    border: 2px solid #000000;
+}
+
+.register-container input:focus, select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.register-container input[type="email"].invalid {
+    border: 2px solid #dc3545;
+    background-color: rgba(220, 53, 69, 0.1);
+}
+
+.register-container select {
+    cursor: pointer;
+    border: 2px solid #0056b3;
+    /*background-color: rgba(0, 86, 179, 0.1);*/
+}
+
+.register-container p {
+    font-size: 15px;
+    /*color: #555;*/
+    color: #666;
+    margin: 10px 0;
+}
+
+.register-container p a {
+    /*color: #0056b3;*/
+    color: #666;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-container p a:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    display: none;
+    margin-top: -5px;
+    margin-bottom: 10px;
+}
+
+#profilePreview {
+    display: none;
+    width: 150px;
+    height: 150px;
+    margin-top: 10px;
+    border-radius: 50%;
+}
+
+.register-container button {
+    width: 220px;
+    padding: 12px 10px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.register-container button:hover {
+    background-color: #333;
+}
+
+#last-line {
+    margin-bottom: 30px;
+}
+
+footer {
+    background: #90D7FF;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    margin-top: 20px;
+}

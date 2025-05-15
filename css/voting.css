@@ -1,0 +1,140 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgba(0, 0, 0, 0.05);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #90D7FF;
+    text-align: center;
+    padding: 20px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+main {
+    margin: 0 auto;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /*align-items: flex-start;*/
+}
+
+.description {
+    width: 50%;
+    padding-left: 10px;
+}
+
+#descript {
+    line-height: 25px;
+    font-size: 19px;
+    margin-bottom: 0px;
+}
+
+.blogdate {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.newblog {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    width: 290px;
+    position: relative;
+}
+
+.blog-image {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.newblog img {
+    height: 220px;
+}
+
+.imgnew {
+    background-color: rgb(173, 173, 173);
+    width: 290px;
+    height: 180px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.namefacult {
+    color: gray;
+    font-size: 12px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.name-date {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.newblog h3 {
+    margin-top: 0px;
+}
+
+.name-date p {
+    margin-top: 8px;
+}
+
+.namefacult {
+    margin-top: 5px;
+}
+
+#see-more {
+    width: 180px;
+    padding: 12px 10px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+#see-more:hover {
+    background-color: #333;
+}
+
+.btn {
+    text-align: center;
+}
+
+.newblog {
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+}
+
+.newblog:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.blogdate a {
+    padding-top: 5px;
+    padding-bottom: 5px; 
+}
+
+footer {
+    background: #90D7FF;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    margin-top: 20px;
+}

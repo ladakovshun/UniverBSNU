@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вибори програми заходів</title>
+    <link rel="stylesheet" href="../css/voting3.css">
+    <script defer src="../js/voting-events.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <h2>Вибори програми заходів</h2>
+    </header>
+
+    <main>
+        <section id="info">
+            <h1>Обери програму заходів!</h1>
+            <p>Голосувати можуть тільки авторизовані студенти.</p>
+        </section>
+
+        <div class="candidates">
+            <div class="candidate">
+                <img src="../img/science_forum.jpg" alt="Науковий форум">
+                <h3>Науковий форум</h3>
+                <p>Лекції та обговорення сучасних наукових досліджень із запрошеними експертами.</p>
+                <button class="vote-btn" data-event="science">Голосувати</button>
+            </div>
+
+            <div class="candidate">
+                <img src="../img/sport_festival.jpg" alt="Спортивний фестиваль">
+                <h3>Спортивний фестиваль</h3>
+                <p>Змагання, командні ігри та активний відпочинок для студентів усіх факультетів.</p>
+                <button class="vote-btn" data-event="sports">Голосувати</button>
+            </div>
+
+            <div class="candidate">
+                <img src="../img/culture_night.jpg" alt="Культурний вечір">
+                <h3>Культурний вечір</h3>
+                <p>Музичні виступи, театральні постановки та поетичні читання.</p>
+                <button class="vote-btn" data-event="culture">Голосувати</button>
+            </div>
+        </div>
+
+        <div id="results">
+            <h2>Результати голосування</h2>
+            <canvas id="voteChart"></canvas>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Студентська рада ЧНУ ім. Петра Могили</p>
+    </footer>
+</body>
+</html>

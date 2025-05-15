@@ -1,0 +1,182 @@
+body {
+    background-color: rgba(0, 0, 0, 0.05);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6; 
+}
+
+header {
+    background-color: #90D7FF;
+    text-align: center;
+    padding: 20px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+
+header:hover {
+    background-color: #3a84bd; /* Зміна кольору на при наведенні */
+    transform: scale(1.05); /* Легке збільшення при наведенні */
+}
+
+header h1, header h2, header h3 {
+    color: white; 
+}
+
+.blognametxt {
+    color: white;
+    font-weight: bold;
+    font-size: 26px;
+}
+
+main {
+    padding: 40px 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-section, .contact-form {
+    margin-bottom: 40px;
+}
+
+h2 {
+    font-size: 26px;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.contact-info p {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: #555;
+}
+
+.contact-form {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: #6daef8;
+    outline: none;
+}
+
+button.submit-btn {
+    background-color: #90D7FF;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+button.submit-btn:hover {
+    background-color: #3a84bd; /* Зміна кольору кнопки на при наведенні */
+}
+
+footer {
+    background-color: #90D7FF;
+    padding: 15px 0;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+footer:hover {
+    background-color: #4487bb;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    .logoproject {
+        width: 120px;
+    }
+
+    .blognametxt {
+        font-size: 22px;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    .contact-info p {
+        font-size: 16px;
+    }
+
+    input, textarea {
+        padding: 10px;
+    }
+
+    button.submit-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px;
+    }
+
+    .logoproject {
+        width: 100px;
+    }
+
+    .blognametxt {
+        font-size: 20px;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    .contact-form {
+        padding: 20px;
+    }
+
+    input, textarea {
+        padding: 8px;
+    }
+
+    button.submit-btn {
+        padding: 10px 20px;
+    }
+}

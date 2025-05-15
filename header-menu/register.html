@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Реєстрація</title>
+    <link rel="stylesheet" href="../css/register.css">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+
+<body>
+    <header>
+        <h2>Реєстрація</h2>
+    </header>
+    <br>
+    <form class="register-container" id="registerForm">
+        <div class="form-align">
+            <label for="name">Прізвище та ім'я</label>
+            <input type="text" id="name" placeholder="Ваше прізвище та ім'я">
+            <small class="error-message" id="nameError"></small>
+        </div>
+
+        <div class="form-align">
+            <label for="login">Логін</label>
+            <input type="text" id="login" placeholder="new_user">
+            <small class="error-message" id="loginError"></small>
+        </div>
+        
+        <div class="form-align">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="example@gmail.com">
+            <small class="error-message" id="emailError"></small>
+        </div>
+        <div class="form-align">
+            <label for="password">Пароль</label>
+            <input type="password" id="password" placeholder="Пароль">
+            <small class="error-message" id="passwordError"></small>
+        </div>
+        <div class="form-align">
+            <label for="password">Підтвердження пароля:</label>
+            <input type="password" id="confirmPassword" placeholder="Підтвердження пароля">
+            <small class="error-message" id="confirmPasswordError"></small>
+        </div>
+        <div class="form-align">
+            <label for="role">Роль</label>
+            <select id="role">
+                <option value="">Оберіть роль</option>
+                <option>Адміністратор</option>
+                <option>Студент</option>
+            </select>
+            <small class="error-message" id="roleError"></small>
+        </div>
+
+        <div class="form-align">
+            <label for="profileImage">Фото профілю</label>
+            <input type="file" id="profileImage" accept="image/*">
+            <br>
+            <img id="profilePreview" src="" alt="Попередній перегляд">
+        </div>
+
+        <button type="submit" id="submitRegister">Зареєструватись</button>
+        <p id="last-line">Вже маєте акаунт? <a href="../index.html">Увійти</a></p>
+    </form>
+    </div>
+    <footer>
+        <p>&copy; 2025 Сайт новин ЧНУ імені Петра Могили</p>
+    </footer>
+
+    <script>
+      document.getElementById("registerForm").addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    let name = document.getElementById("name");
+    let login = document.getElementById("login");
+    let email = document.getElementById("email");
+    let password = document.getElementById("password");
+    let confirmPassword = document.getElementById("confirmPassword");
+    let role = document.getElementById("role");
+    let profileImage = document.getElementById("profileImage");
+
+    // Додаємо контейнер для повідомлень про помилки
+    let nameError = document.getElementById("nameError");
+    let loginError = document.getElementById("loginError");
+    let emailError = document.getElementById("emailError");
+    let passwordError = document.getElementById("passwordError");
+    let confirmPasswordError = document.getElementById("confirmPasswordError");
+    let roleError = document.getElementById("roleError");
+
+    if (!nameError) {
+        nameError = document.createElement("p");
+        nameError.id = "nameError";
+        nameError.style.color = "red";
+        name.parentNode.appendChild(nameError);
+    }
+    
+    if (!loginError) {
+        loginError = document.createElement("p");
+        loginError.id = "loginError";
+        loginError.style.color = "red";
+        login.parentNode.appendChild(loginError);
+    }
+    
+    if (!emailError) {
+        emailError = document.createElement("p");
+        emailError.id = "emailError";
+        emailError.style.color = "red";
+        email.parentNode.appendChild(emailError);
+    }
+
+    if (!passwordError) {
+        passwordError = document.createElement("p");
+        passwordError.id = "passwordError";
+        passwordError.style.color = "red";
+        password.parentNode.appendChild(passwordError);
+    }
+
+    if (!confirmPasswordError) {
+        confirmPasswordError = document.createElement("p");
+        confirmPasswordError.id = "confirmPasswordError";
+        confirmPasswordError.style.color = "red";
+        confirmPassword.parentNode.appendChild(confirmPasswordError);
+    }
+
+    if (!roleError) {
+        roleError = document.createElement("p");
+        roleError.id = "roleError";
+        roleError.style.color = "red";
+        role.parentNode.appendChild(roleError);
+    }
+
+    let isValid = true;
+
+    // Перевірка поля "Прізвище та ім'я"
+    if (name.value.trim().length < 3) {
+        nameError.textContent = "Прізвище та ім'я повинні містити щонайменше 3 символи.";
+        nameError.style.display = "block";
+        isValid = false;
+    } else {
+        nameError.style.display = "none";
+    }
+
+    // Перевірка логіна
+    if (login.value.trim().length < 3) {
+        loginError.textContent = "Логін повинен містити щонайменше 3 символи.";
+        loginError.style.display = "block";
+        isValid = false;
+    } else {
+        loginError.style.display = "none";
+    }
+
+    // Перевірка електронної пошти
+    let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email.value.trim())) {
+        emailError.textContent = "Введіть правильну адресу електронної пошти.";
+        emailError.style.display = "block";
+        isValid = false;
+    } else {
+        emailError.style.display = "none";
+    }
+
+    // Перевірка пароля
+    if (password.value.trim().length < 6) {
+        passwordError.textContent = "Пароль повинен містити щонайменше 6 символів.";
+        passwordError.style.display = "block";
+        isValid = false;
+    } else {
+        passwordError.style.display = "none";
+    }
+
+    // Перевірка підтвердження пароля
+    if (confirmPassword.value !== password.value) {
+        confirmPasswordError.textContent = "Паролі не співпадають.";
+        confirmPasswordError.style.display = "block";
+        isValid = false;
+    } else {
+        confirmPasswordError.style.display = "none";
+    }
+
+    // Перевірка ролі
+    if (role.value === "") {
+        roleError.textContent = "Оберіть вашу роль.";
+        roleError.style.display = "block";
+        isValid = false;
+    } else {
+        roleError.style.display = "none";
+    }
+
+    // Якщо всі перевірки пройдені, реєструємо користувача
+    if (isValid) {
+        alert("Реєстрація успішна! Перехід на головну сторінку.");
+
+        // Очищення форми після успішної реєстрації
+        name.value = "";
+        login.value = "";
+        email.value = "";
+        password.value = "";
+        confirmPassword.value = "";
+        role.selectedIndex = 0;
+        profileImage.value = "";
+
+        // Очищення попереднього перегляду зображення
+        document.getElementById("profilePreview").src = "";
+
+        // Перехід на головну сторінку
+        window.location.href = "../index.html";
+    }
+});
+
+document.getElementById("profileImage").addEventListener("change", function(event) {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const preview = document.getElementById("profilePreview");
+            preview.src = e.target.result;
+            preview.style.display = "block";
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    let user = JSON.parse(localStorage.getItem("currentUser"));
+
+    if (user) {
+        document.getElementById("auth-buttons").innerHTML = `
+            <a href="user-profile.html" class="profile-btn">${user.name}</a>
+        `;
+    }
+});
+    </script>
+    <script defer src="../js/register.js"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #90D7FF;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.description {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+#faculty {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+.author-date {
+    color: gray;
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+.hrline {
+    border: 1px solid #ccc;
+    margin-top: 15px;
+}
+
+.descript {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.bannerimg {
+    height: 300px;
+    background: url('../img/startup.jpg') no-repeat center;
+    background-size: cover;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+footer {
+    background: #90D7FF;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    margin-top: 20px;
+}

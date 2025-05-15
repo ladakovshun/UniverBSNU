@@ -1,0 +1,246 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgba(0, 0, 0, 0.05);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #90D7FF;
+    text-align: center;
+    padding: 20px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+main {
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#faculty {
+    font-size: 14px;
+    font-weight: bold;
+
+}
+
+.author-date {
+    margin-bottom: 0px;
+    margin-top: 8px;
+    color: gray;
+}
+
+.hrline {
+    border: 1px solid black;
+    margin: 20px 0px 0px;
+}
+
+#line {
+    margin-top: 40px;
+}
+
+.bannermain {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    width: 100%;
+}
+
+.bannerhr {
+    width: 900px;
+    height: 400px;
+    border-radius: 10px;
+    background-image: url('banner3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+}
+
+
+.description {
+    padding-right: 20px;
+    width: 50%;
+}
+
+.descript {
+    line-height: 25px;
+    font-size: 19px;
+}
+
+.comments-section {
+    background-color: #f3f3f3;
+    padding: 20px;
+    border-radius: 10px;
+    width: 750px;
+}
+
+.comments-section h2 {
+    text-align: left;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.comment-textarea {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 50px;
+    max-height: 150px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+#submit-comment {
+    background-color: #5da8d3;
+    color: white;
+    font-size: 16px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin: 10px 0px 20px 0px;
+    display: block;
+    width: 120px;
+}
+
+#submit-comment:hover {
+    background-color: #3c7ca5;
+}
+
+.custom-line {
+    border: 1px solid;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.textcool {
+    font-weight: bold;
+    font-size: 25px;
+    margin-left: 5px;
+    margin-bottom: 0px;
+}
+
+#similar {
+    margin-top: 25px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    align-self: flex-start;
+}
+
+.blogdate {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.newblog {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    width: 290px;
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 10px;
+}
+
+.imgnew {
+    background-color: rgb(173, 173, 173);
+    width: 290px;
+    height: 180px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.namefacult {
+
+    font-size: 12px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.name-date {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.newblog h3 {
+    margin-top: 0px;
+}
+
+.name-date p {
+    margin-top: 8px;
+}
+
+.newblog:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    background: #90D7FF;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    margin-top: 20px;
+}
+
+@media (max-width: 900px) {
+    .comments-section {
+        width: 90%;
+    }
+
+    .descript {
+        font-size: 16px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 600px) {
+    .comment-textarea {
+        font-size: 14px;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .comments-section {
+        padding: 10px;
+    }
+
+    .descript {
+        font-size: 14px;
+    }
+
+    button {
+        width: 100%;
+        font-size: 12px;
+        padding: 5px;
+    }
+}
