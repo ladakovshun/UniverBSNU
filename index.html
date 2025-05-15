@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main</title>
+    <link rel="stylesheet" href="css/main.css">
+    </div>
+</head>
+<script>
+    function toggleMenu() {
+        let menu = document.querySelector(".mainmenu");
+        menu.style.display = (menu.style.display === "flex") ? "none" : "flex";
+    }
+</script>
+<body>
+    <header class="header-main">
+        <div class="logohead">
+            <img src="./img/logo.png" class="logoproject" alt="Банер ФКН">
+            <p class="blognametxt">Твій студентський блог</p>
+        </div>
+        <div>
+            <input type="text" placeholder="Пошук" class="search-box" id="searchInput">
+        </div>
+        <div>
+            <!-- перемикач теми -->
+            <label class="theme-switch">
+                <input type="checkbox" id="theme-toggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+        <div class="buttonlog">
+            <div id="authContainer">
+                <button id="buttonlog"class="login-btn">Увійти</button>
+                <!--<a id="profileLink" href="./profile/profile.html" style="display: none;">
+                    <img src="./img/icon-profile.png" alt="Profile" width="40" height="40">
+                </a>-->
+            </div>
+            <p id="visitCounter" style="font-size: 16px; font-weight: bold; margin-left: 20px;"></p>
+            <div id="loginModal" class="modal-window">
+                <form class="modal-content" id="loginForm">
+                    <span class="close">&times;</span>
+                    <h2>Увійти до системи</h2>
+                    <div class="form-align">
+                        <label for="login">Логін</label>
+                        <input type="text" id="login" placeholder="your_login">
+                        <small class="error-message" id="loginError"></small>
+                    </div>
+                    
+                    <div class="form-align">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="example@gmail.com">
+                        <small class="error-message" id="emailError"></small>
+                    </div>
+                    <div class="form-align">
+                        <label for="password">Пароль</label>
+                        <input type="password" id="password" placeholder="Ваш пароль">
+                        <small class="error-message" id="passwordError"></small>
+                    </div>
+                    <div class="form-align">
+                        <label for="role">Роль</label>
+                        <select id="role">
+                            <option value="">Оберіть роль</option>
+                            <option>Адміністратор</option>
+                            <option>Студент</option>
+                        </select>
+                        <small class="error-message" id="roleError"></small>
+                    </div>                    
+                    <button type="submit" id="submitLogin">Увійти</button>
+                    <p>Немає облікового запису? <a href="./header-menu/register.html" id="registerLink"><span>Зареєструватись</span></a></p>
+                </form>
+            </div>
+            <script src="./js/login.js"></script>
+        </div>
+    </header>
+    <main>
+        <div class="menu-container">
+            <div class="burger-menu" onclick="toggleMenu()">☰</div>
+            <div class="mainmenu">
+                <a href="./header-menu/general-news.html"><p>Загальні новини</p></a>
+                <a href="./header-menu/faculties.html"><p>Факультети</p></a>
+                <a href="./header-menu/voting.html"><p>Голосування</p></a>
+                <a href="./header-menu/rating.html"><p>Рейтинг</p></a>
+            </div>
+        </div>
+        
+        <hr class="hrline">
+        <div class="bannermain">
+            <div class="bannerhr">
+                <img src="./img/banner.jpg" alt="Банер" class="banner-image">
+            </div>
+        </div>
+        <p class="populartext">Популярне</p>
+        <hr class="custom-line">
+        <p class="textcool" id="this-week">На цьому тижні</p>
+        <div class="blogdate">
+            <a href="articles/this-week-article1.html" class="newblog">
+                <!--<div class="imgnew banner4"></div>-->
+                <img src="./img/banner4.jpg" alt="Банер 1" class="banner-image1">
+                <p class="namefacult">ФКН</p>
+                <h3>Конкурс стартапів: як це?</h3>
+                <br>
+                <div class="name-date">
+                    <p>Кравченко П.</p>
+                    <p>09 жовтня 2024</p>
+                </div>
+            </a>
+            <a href="articles/this-week-article2.html" class="newblog">
+                <!--<div class="imgnew banner1"></div>-->
+                <img src="./img/banner1.jpg" alt="Банер 2" class="banner-image1">
+                <p class="namefacult">ФКН | ІПЗ</p>
+                <h3>Стань розробником – обери шлях...</h3>
+                <div class="name-date">
+                    <p>Давиденко Є.</p>
+                    <p>20 листопада 2024</p>
+                </div>
+            </a>
+            <a href="articles/this-week-article3.html" class="newblog">
+                <!--<div class="imgnew banner2"></div>-->
+                <img src="./img/banner2_2.jpg" alt="Банер 3" class="banner-image1">
+                <p class="namefacult">ФКН</p>
+                <h3>Як проходить вступ?</h3>
+                <br>
+                <div class="name-date">
+                    <p>Бойко А.</p>
+                    <p>31 січня 2024</p>
+                </div>
+            </a>
+            <a href="articles/this-week-article4.html" class="newblog">
+                <!--<div class="imgnew banner5"></div>-->
+                <img src="./img/banner5.jpg" alt="Банер 4" class="banner-image1">
+                <p class="namefacult">ФКН</p>
+                <h3>Участь у хакатоні</h3>
+                <br>
+                <div class="name-date">
+                    <p>Кравченко П.</p>
+                    <p>02 лютого 2024</p>
+                </div>
+            </a>
+            <a href="articles/this-week-article5.html" class="newblog">
+                <!--<div class="imgnew banner6"></div>-->
+                <img src="./img/banner6.jpg" alt="Банер 5" class="banner-image1">
+                <p class="namefacult">ФКН</p>
+                <h3>Написання наукових робіт</h3>
+                <div class="name-date">
+                    <p>Кравченко П.</p>
+                    <p>09 жовтня 2024</p>
+                </div>
+            </a>
+            <a href="articles/this-week-article6.html" class="newblog">
+                <!--<div class="imgnew banner7"></div>-->
+                <img src="./img/banner7.jpg" alt="Банер 6" class="banner-image1">
+                <p class="namefacult">ФКН | ІПЗ</p>
+                <h3>Актуальні вакансії</h3>
+                <div class="name-date">
+                    <p>Давиденко Є.</p>
+                    <p>20 листопада 2024</p>
+                </div>
+            </a>
+            <a href="articles/this-week-article7.html" class="newblog">
+                <!--<div class="imgnew banner8"></div>-->
+                <img src="./img/banner8.jpg" alt="Банер 7" class="banner-image1">
+                <p class="namefacult">ФКН</p>
+                <h3>3D-моделювання – це легко</h3>
+                <div class="name-date">
+                    <p>Бойко А.</p>
+                    <p>31 січня 2024</p>
+                </div>
+            </a>
+            <a href="articles/this-week-article8.html" class="newblog">
+                <!--<div class="imgnew banner9"></div>-->
+                <img src="./img/banner9.jpg" alt="Банер 8" class="banner-image1">
+                <p class="namefacult">ФКН</p>
+                <h3>Що таке бекенд?</h3>
+                <div class="name-date">
+                    <p>Стоєв Є.</p>
+                    <p>02 лютого 2025</p>
+                </div>
+            </a>
+        </div>
+        <hr class="custom-line">
+        <p class="textcool" id="num-1">Ми – номер 1</p>
+        <div class="cards">
+            <a href="https://www.youtube.com/watch?v=vLuCRiUifiU" class="blog-card">
+                <div class="blogcss">
+                    <img src="./img/abitur1.png" alt="Перший крок" class="blog-image">
+                </div>
+                <p class="blog-category">Абітурієнтам</p>
+                <h2 class="blog-title">Перший крок вступу</h2>
+                <div class="blog-meta">
+                    <p>Бойко А.</p>
+                </div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=kj_384EyX5k" class="blog-card">
+                <div class="blogcss">
+                    
+                    <img src="./img/abitur1.png" alt="Другий крок вступу" class="blog-image">
+                </div>
+                <p class="blog-category">Абітурієнтам</p>
+                <h2 class="blog-title">Другий крок вступу</h2>
+                <div class="blog-meta">
+                    <p>Бойко А.</p>
+                </div>
+            </a>
+            <a href="https://www.youtube.com/watch?v=gfz-HIN8PhQ" class="blog-card">
+                <div class="blogcss">
+                    <img src="./img/abitur1.png" alt="Третій крок вступу" class="blog-image">
+                </div>
+                <p class="blog-category">Абітурієнтам</p>
+                <h2 class="blog-title">Третій крок вступу</h2>
+                <div class="blog-meta">
+                    <p>Давиденко Є.</p>
+                </div>
+            </a>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <img src="./img/logo.png" width="120px" alt="logo">
+        </div>
+        <div>
+        <div class="links">
+            <a href="https://www.instagram.com/mogilyanka" target="_blank" rel="noopener noreferrer"><img src="./img/insta.png" alt="Instagram">
+            <a href="https://www.facebook.com/chmnupres/" target="_blank" rel="noopener noreferrer"><img src="./img/facebook.png" alt="Facebook"></a>
+            <a href="https://t.me/mogilyanka_official" target="_blank" rel="noopener noreferrer"><img src="./img/telegram.png" alt="Telegram"></a>
+        </div>
+        <div class="footer-menu">
+            <a href="./footer-menu/about-us.html"><p>Про нас</p></a>
+            <a href="./footer-menu/admins.html"><p>Адміністратори</p></a>
+            <a href="https://chmnu.edu.ua/"><p>Архів</p></a>
+            <a href="./footer-menu/contacts.html"><p>Контакти</p></a>
+            <a href="./footer-menu/address.html"><p>Адреса</p></a>
+        </div>
+        Технічна підтримка: support@chmnu.edu.ua
+    </footer>
+    <script src="./js/script.js"></script>
+    <script src="./js/script1.js"></script>
+    <script src="./js/search.js"></script>
+</body>
+</html>

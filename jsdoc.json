@@ -1,0 +1,8 @@
+{
+    "source": {
+        "include": "./js/comments.js"
+    },
+    "opts": {
+        "destination": "./docs"
+    }
+}
